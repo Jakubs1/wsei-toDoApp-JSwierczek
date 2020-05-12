@@ -1,27 +1,20 @@
-import React, { FC } from 'react';
-import { Button, View } from 'react-native';
+import * as React from 'react';
 import styled from 'styled-components/native';
+import { FC, useState } from 'react';
+import Layout from "../../constans/Layout";
+import { Text, View, Image, ScrollView } from 'react-native';
 
-import Colors from '../../constans/Colors';
 
-const WelcomeText = styled.Text`
-    margin: 120px 20px;
-    font-size: 16px;
-    color: ${Colors.black};
-`;
 
-interface ITodoListProps {}
+const ListTab: FC = () => {
+    const [formView, setFormView] = useState<boolean>(false);
 
-const TodoList = ({navigation}) => {
     return (
-        <View>
-            <WelcomeText>To jest TodoList View</WelcomeText>
-            <Button title="Home screen" onPress={() => {
-                navigation.navigate('Home');
-            }}
-            />
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text>There will be TodoList</Text>
         </View>
     );
-};
+}
 
-export default TodoList;
+
+export default ListTab;

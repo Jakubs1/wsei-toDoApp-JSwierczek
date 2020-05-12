@@ -1,39 +1,43 @@
-import React, { FC } from 'react';
-import { Button, View, Image, Text } from 'react-native';
+import * as React from 'react';
+import { Text, View, Image, ScrollView } from 'react-native';
 import styled from 'styled-components/native';
-import { useNavigation } from '@react-navigation/native';
+import { FC } from 'react';
 
-import Colors from '../../constans/Colors';
-
-const WelcomeText = styled.Text`
-    margin: 120px 20px;
-    font-size: 16px;
-    color: ${Colors.black};
+const Avatar = styled.Image`
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    margin-top: 30px;
+    margin-left: 15px;
+`;
+const LandscapeImg = styled.Image`
+    width: 100%;
+    height: 40%;
+`;
+export const ScrollBox = styled.ScrollView`
+    flex: 1;
+    width: 100%;
+`;
+const Paragraph = styled.Text`
+    margin: 20px;
+    font-size: 18px;
+    line-height: 28px;
 `;
 
-const CustomImage = styled.Image`
-    width: 50px;
-    height: 50px;
-    margin: 50px;
-`;
-
-interface IHomeProps { }
-
-const Home: FC<IHomeProps> = (props) => {
-    const navigation = useNavigation();
-
+const HomeTab: FC = () => {
     return (
-        <View>
-            <WelcomeText>To jest home screen 2</WelcomeText>
-            <CustomImage
-                source={require('../../assets/logo.png')}
-            />
-            <Button title="TodoList screen" onPress={() => {
-                navigation.navigate('TodoList');
-            }}
-            />
-        </View>
-    );
-};
 
-export default Home;
+        <ScrollBox>
+            <Avatar
+                source={require('../../assets/avatar.png')}
+            />
+            <Text>There will be Home Page</Text>
+            <LandscapeImg
+                source={require('../../assets/wolf.jpg')}
+            />
+            <Paragraph>{'\t'}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Paragraph>
+        </ScrollBox>
+    );
+}
+
+export default HomeTab;
