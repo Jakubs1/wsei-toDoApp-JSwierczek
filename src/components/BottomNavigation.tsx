@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FC } from 'react';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 
-import ListTab from '../screens/TodoList';
 import HomeTab from '../screens/Home';
 import DescriptionTab from '../screens/Description';
 import ToDoList from '../screens/TodoList';

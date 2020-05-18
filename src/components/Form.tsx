@@ -8,7 +8,7 @@ import { setNewElemTodoList } from '../actions/todoListActions';
 import { ISingleElementList } from '../entities/todoSingleEl';
 
 const Wrapper = styled.View`
-    margin: 80px 20px 0 20px;
+    margin: 80px 40px 0 40px;
 `;
 
 const CustomTextInput = styled.TextInput`
@@ -36,6 +36,7 @@ const Form: FC<{ switchView(formView: boolean) }> = props => {
         disptach<SetNewElemTodoList>(setNewElemTodoList({
             name: nameInput,
             description: descInput,
+            id: new Date().getTime()
         } as ISingleElementList
         ));
         props.switchView(false)
