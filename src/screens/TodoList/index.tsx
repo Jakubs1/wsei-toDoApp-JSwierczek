@@ -4,14 +4,18 @@ import { FC, useState } from 'react';
 import Layout from "../../constans/Layout";
 import { Text, View, Image, ScrollView } from 'react-native';
 
+import Form from '../../components/Form';
+import TodoList from '../../components/TodoList';
 
-
-const ListTab: FC = () => {
+const ListTab = ({ navigation }) => {
     const [formView, setFormView] = useState<boolean>(false);
-
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>There will be TodoList</Text>
+        <View>
+            {formView ? (
+                <Form switchView={setFormView} />
+            ) : (
+                    <TodoList switchView={setFormView} />
+                )}
         </View>
     );
 }
