@@ -8,11 +8,13 @@ import { setNewElemTodoList } from '../actions/todoListActions';
 import { ISingleElementList } from '../entities/todoSingleEl';
 
 const Wrapper = styled.View`
-    margin: 80px 40px 0 40px;
+    height: 100%;
+    margin: 80px 40px 0px; 40px;
 `;
 
 const CustomTextInput = styled.TextInput`
     border: 1px solid;
+    margin-top: -1px;
     padding: 10px;
     color: black;
     width: 100%;
@@ -44,9 +46,9 @@ const Form: FC<{ switchView(formView: boolean) }> = props => {
 
     return (
         <Wrapper>
-            <CustomTextInput value={nameInput} onChange={nameValueChange} placeholder="Name" />
-            <CustomTextInput value={descInput} onChange={descriptionValueChange} placeholder="Description" />
-            <Button title="Zapisz" onPress={saveDate} />
+            <CustomTextInput value={nameInput} backgroundColor="gold" onChange={nameValueChange} placeholder="Name" placeholderTextColor="#666" />
+            <CustomTextInput value={descInput} backgroundColor="khaki" onChange={descriptionValueChange} placeholder="Description" placeholderTextColor="#666" />
+            <Button title="Save" color="navy" onPress={saveDate} />
         </Wrapper>
     )
 }
